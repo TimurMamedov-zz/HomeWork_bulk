@@ -4,23 +4,16 @@
 */
 #pragma once
 
-#include "commands_storage.h"
 class CommandsStorage;
 
 class Solver
 {
 public:
-    explicit Solver(CommandsStorage& commStor);
+    explicit Solver(CommandsStorage& commStor) :commandStorage(commStor){}
     virtual void solve() = 0;
-    virtual ~Solver();
+    virtual ~Solver(){}
 
 protected:
     CommandsStorage& commandStorage;
 };
 
-class SaveSolver : public Solver
-{
-public:
-    explicit SaveSolver(CommandsStorage& commStor);
-    void solve() override;
-};

@@ -15,5 +15,6 @@ public:
 
 protected:
     CommandsStorage& commandStorage;
+    void print();
 };
 

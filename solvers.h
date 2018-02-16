@@ -6,13 +6,6 @@
 
 #include "solver.h"
 
-class AddingSolver : public Solver
-{
-public:
-    explicit AddingSolver(CommandsStorage& commStor);
-    void solve() override;
-};
-
 class PrintSolver : public Solver
 {
 public:
@@ -20,9 +13,9 @@ public:
     void solve() override;
 };
 
-class LastSolver : public Solver
+class ForcingPrintSolver : public Solver
 {
 public:
-    explicit LastSolver(CommandsStorage& commStor);
+    explicit ForcingPrintSolver(CommandsStorage& commStor);
     void solve() override;
 };

@@ -8,7 +8,7 @@ project(bulk)
 #configure_file(version.h.in version.h)
 
 set(HEADERS commands_storage.h solver.h solvers.h)
-set(SOURCES commands_storage.cpp solvers.cpp)
+set(SOURCES commands_storage.cpp solver.cpp solvers.cpp)
 
 add_executable(bulk ${HEADERS} ${SOURCES} main.cpp)
 

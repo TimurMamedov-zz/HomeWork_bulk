@@ -1,45 +1,28 @@
 #include "solvers.h"
 #include "commands_storage.h"
 
-AddingSolver::AddingSolver(CommandsStorage &commStor)
-    :Solver(commStor)
-{
-}
-
 PrintSolver::PrintSolver(CommandsStorage &commStor)
     :Solver(commStor)
 {
 }
 
-LastSolver::LastSolver(CommandsStorage &commStor)
+ForcingPrintSolver::ForcingPrintSolver(CommandsStorage &commStor)
     :Solver(commStor)
 {
 }
 
 void PrintSolver::solve()
 {
-    if(commandStorage.commandsSize() >= commandStorage.bulkSize() && commandStorage.bracketEmpty())
+    if((commandStorage.commandsSize() >= commandStorage.bulkSize()) && !commandStorage.bracketSize())
     {
-        commandStorage.save();
-        commandStorage.print();
-        commandStorage.clear();
+        Solver::print();
     }
 }
 
-void AddingSolver::solve()
+void ForcingPrintSolver::solve()
 {
-    auto currStr = commandStorage.getCurrentString();
-    if(currStr == "{" || currStr == "}")
-        commandStorage.addBracket(currStr);
-    else
-        commandStorage.addCommand(currStr);
-}
-
-void LastSolver::solve()
-{
-    if(commandStorage.bracketEmpty() && commandStorage.commandsSize())
+    if(!commandStorage.bracketSize() && commandStorage.commandsSize())
     {
-        commandStorage.save();
-        commandStorage.print();
+        Solver::print();
     }
 }

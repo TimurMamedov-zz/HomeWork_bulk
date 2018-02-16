@@ -4,49 +4,27 @@
 CommandsStorage::CommandsStorage(std::size_t bulkSize) : bulkSize_(bulkSize)
 {
     commandsVector.reserve(bulkSize_);
-    solvers.reserve(3);
-    solvers.emplace_back(std::make_unique<AddingSolver>(*this));
-    solvers.emplace_back(std::make_unique<PrintSolver>(*this));
+    autoSavingSolver = std::make_unique<PrintSolver>(*this);
+    forcingAutoSavingSolver = std::make_unique<ForcingPrintSolver>(*this);
 }
 
 CommandsStorage::~CommandsStorage()
 {
-    LastSolver solver(*this);
-    solver.solve();
+    forcingAutoSavingSolver->solve();
 }
 
 void CommandsStorage::addString(const std::string& str)
 {
-    currentString = str;
-    for(auto& solver: solvers)
-    {
-        solver->solve();
-    }
+    if(str == "{" || str == "}")
+        addBracket(str);
+    else
+        addCommand(str);
+    autoSavingSolver->solve();
 }
 
-void CommandsStorage::save()
-{
-    std::ofstream file;
-    std::stringstream ss;
-    ss << std::chrono::system_clock::to_time_t(firstBulkTime);
-    file.open(ss.str() + "bulk.log");
-    file << bulkCommandString();
-    file.close();
-}
-
-void CommandsStorage::print() const
-{
-    std::cout << bulkCommandString() << std::endl;
-}
-
-bool CommandsStorage::bracketEmpty() const { return bracketStack.empty(); }
+std::size_t CommandsStorage::bracketSize() const { return bracketStack.size(); }
 std::size_t CommandsStorage::commandsSize() const { return commandsVector.size(); }
 std::size_t CommandsStorage::bulkSize() const { return bulkSize_; }
-
-std::string CommandsStorage::getCurrentString() const
-{
-    return currentString;
-}
 
 void CommandsStorage::addCommand(const std::string& command)
 {
@@ -60,6 +38,7 @@ void CommandsStorage::addBracket(const std::string& bracket)
 {
     if(bracket == "{")
     {
+        forcingAutoSavingSolver->solve();
         bracketStack.push(bracket);
     }
     else if(bracket == "}")
@@ -67,6 +46,7 @@ void CommandsStorage::addBracket(const std::string& bracket)
         if(!bracketStack.empty())
             if(bracketStack.top() == "{")
                 bracketStack.pop();
+        forcingAutoSavingSolver->solve();
     }
 }
 
@@ -85,8 +65,12 @@ std::string CommandsStorage::bulkCommandString() const
     return ss.str();
 }
 
-void CommandsStorage::clear()
+const std::chrono::system_clock::time_point &CommandsStorage::getFirstBulkTime() const
+{
+    return firstBulkTime;
+}
+
+void CommandsStorage::clearCommandsVector()
 {
     commandsVector.clear();
-    bracketStack = std::stack<std::string>();
 }

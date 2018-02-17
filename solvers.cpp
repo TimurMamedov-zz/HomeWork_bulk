@@ -1,17 +1,17 @@
 #include "solvers.h"
 #include "commands_storage.h"
 
-PrintSolver::PrintSolver(CommandsStorage &commStor)
+SaveSolver::SaveSolver(CommandsStorage &commStor)
     :Solver(commStor)
 {
 }
 
-ForcingPrintSolver::ForcingPrintSolver(CommandsStorage &commStor)
+ForcingSaveSolver::ForcingSaveSolver(CommandsStorage &commStor)
     :Solver(commStor)
 {
 }
 
-void PrintSolver::solve()
+void SaveSolver::solve()
 {
     if((commandStorage.commandsSize() >= commandStorage.bulkSize()) && !commandStorage.bracketSize())
     {
@@ -19,7 +19,7 @@ void PrintSolver::solve()
     }
 }
 
-void ForcingPrintSolver::solve()
+void ForcingSaveSolver::solve()
 {
     if(!commandStorage.bracketSize() && commandStorage.commandsSize())
     {

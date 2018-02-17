@@ -4,8 +4,8 @@
 CommandsStorage::CommandsStorage(std::size_t bulkSize) : bulkSize_(bulkSize)
 {
     commandsVector.reserve(bulkSize_);
-    autoSavingSolver = std::make_unique<PrintSolver>(*this);
-    forcingAutoSavingSolver = std::make_unique<ForcingPrintSolver>(*this);
+    autoSavingSolver = std::make_unique<SaveSolver>(*this);
+    forcingAutoSavingSolver = std::make_unique<ForcingSaveSolver>(*this);
 }
 
 CommandsStorage::~CommandsStorage()

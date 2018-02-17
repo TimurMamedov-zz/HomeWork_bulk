@@ -6,16 +6,16 @@
 
 #include "solver.h"
 
-class PrintSolver : public Solver
+class SaveSolver : public Solver
 {
 public:
-    explicit PrintSolver(CommandsStorage& commStor);
+    explicit SaveSolver(CommandsStorage& commStor);
     void solve() override;
 };
 
-class ForcingPrintSolver : public Solver
+class ForcingSaveSolver : public Solver
 {
 public:
-    explicit ForcingPrintSolver(CommandsStorage& commStor);
+    explicit ForcingSaveSolver(CommandsStorage& commStor);
     void solve() override;
 };

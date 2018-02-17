@@ -28,9 +28,6 @@ public:
     std::size_t commandsSize() const;
     std::size_t bulkSize() const;
 
-    void addCommand(const std::string& command);
-    void addBracket(const std::string& bracket);
-
     std::string bulkCommandString() const;
 
     const std::chrono::system_clock::time_point& getFirstBulkTime() const;
@@ -42,4 +39,7 @@ private:
     const std::size_t bulkSize_;
     std::shared_ptr<Solver> autoSavingSolver;
     std::shared_ptr<Solver> forcingAutoSavingSolver;
+
+    void addCommand(const std::string& command);
+    void addBracket(const std::string& bracket);
 };

@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>bulk: Исходный файл commands_storage.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">bulk
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">commands_storage.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="commands__storage_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;stack&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="solver_8h.html">solver.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classCommandsStorage.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCommandsStorage.html">CommandsStorage</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classCommandsStorage.html#a778cec9cb7bb7c98e79fad347992b4da">CommandsStorage</a>(std::size_t <a class="code" href="classCommandsStorage.html#ad629009d468ce2247f10f37999b76b9f">bulkSize</a>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classCommandsStorage.html#ab9584a2512ce2bd53d70fa07f7eb5dd5">~CommandsStorage</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCommandsStorage.html#a8256f1436dacdad169ab7c85c3277013">addString</a>(<span class="keyword">const</span> std::string&amp; str);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCommandsStorage.html#a0b2342a4f2382210a4cec9cf54a4e80a">clearCommandsVector</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    std::size_t <a class="code" href="classCommandsStorage.html#accc0a76edf52a7b3caf02d8e39fadaa7">bracketSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    std::size_t <a class="code" href="classCommandsStorage.html#a093d1da4fc7642e71ad84c7c804cd3a3">commandsSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::size_t <a class="code" href="classCommandsStorage.html#ad629009d468ce2247f10f37999b76b9f">bulkSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::string <a class="code" href="classCommandsStorage.html#ac9ceaa07209e5118d4c06c9b75210673">bulkCommandString</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">const</span> std::chrono::system_clock::time_point&amp; <a class="code" href="classCommandsStorage.html#a3160255080a51ae364c7f914579d5d1b">getFirstBulkTime</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::stack&lt;std::string&gt; bracketStack;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::vector&lt;std::string&gt; commandsVector;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::chrono::system_clock::time_point firstBulkTime;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> std::size_t bulkSize_;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    std::shared_ptr&lt;Solver&gt; autoSavingSolver;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::shared_ptr&lt;Solver&gt; forcingAutoSavingSolver;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> addCommand(<span class="keyword">const</span> std::string&amp; command);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> addBracket(<span class="keyword">const</span> std::string&amp; bracket);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="ttc" id="classCommandsStorage_html"><div class="ttname"><a href="classCommandsStorage.html">CommandsStorage</a></div><div class="ttdef"><b>Definition:</b> <a href="commands__storage_8h_source.html#l00017">commands_storage.h:17</a></div></div>
+<div class="ttc" id="classCommandsStorage_html_a3160255080a51ae364c7f914579d5d1b"><div class="ttname"><a href="classCommandsStorage.html#a3160255080a51ae364c7f914579d5d1b">CommandsStorage::getFirstBulkTime</a></div><div class="ttdeci">const std::chrono::system_clock::time_point &amp; getFirstBulkTime() const </div><div class="ttdef"><b>Definition:</b> <a href="commands__storage_8cpp_source.html#l00070">commands_storage.cpp:70</a></div></div>
+<div class="ttc" id="classCommandsStorage_html_ad629009d468ce2247f10f37999b76b9f"><div class="ttname"><a href="classCommandsStorage.html#ad629009d468ce2247f10f37999b76b9f">CommandsStorage::bulkSize</a></div><div class="ttdeci">std::size_t bulkSize() const </div><div class="ttdef"><b>Definition:</b> <a href="commands__storage_8cpp_source.html#l00027">commands_storage.cpp:27</a></div></div>
+<div class="ttc" id="classCommandsStorage_html_ac9ceaa07209e5118d4c06c9b75210673"><div class="ttname"><a href="classCommandsStorage.html#ac9ceaa07209e5118d4c06c9b75210673">CommandsStorage::bulkCommandString</a></div><div class="ttdeci">std::string bulkCommandString() const </div><div class="ttdef"><b>Definition:</b> <a href="commands__storage_8cpp_source.html#l00053">commands_storage.cpp:53</a></div></div>
+<div class="ttc" id="solver_8h_html"><div class="ttname"><a href="solver_8h.html">solver.h</a></div></div>
+<div class="ttc" id="classCommandsStorage_html_a093d1da4fc7642e71ad84c7c804cd3a3"><div class="ttname"><a href="classCommandsStorage.html#a093d1da4fc7642e71ad84c7c804cd3a3">CommandsStorage::commandsSize</a></div><div class="ttdeci">std::size_t commandsSize() const </div><div class="ttdef"><b>Definition:</b> <a href="commands__storage_8cpp_source.html#l00026">commands_storage.cpp:26</a></div></div>
+<div class="ttc" id="classCommandsStorage_html_a778cec9cb7bb7c98e79fad347992b4da"><div class="ttname"><a href="classCommandsStorage.html#a778cec9cb7bb7c98e79fad347992b4da">CommandsStorage::CommandsStorage</a></div><div class="ttdeci">CommandsStorage(std::size_t bulkSize)</div><div class="ttdef"><b>Definition:</b> <a href="commands__storage_8cpp_source.html#l00004">commands_storage.cpp:4</a></div></div>
+<div class="ttc" id="classCommandsStorage_html_a8256f1436dacdad169ab7c85c3277013"><div class="ttname"><a href="classCommandsStorage.html#a8256f1436dacdad169ab7c85c3277013">CommandsStorage::addString</a></div><div class="ttdeci">void addString(const std::string &amp;str)</div><div class="ttdef"><b>Definition:</b> <a href="commands__storage_8cpp_source.html#l00016">commands_storage.cpp:16</a></div></div>
+<div class="ttc" id="classCommandsStorage_html_a0b2342a4f2382210a4cec9cf54a4e80a"><div class="ttname"><a href="classCommandsStorage.html#a0b2342a4f2382210a4cec9cf54a4e80a">CommandsStorage::clearCommandsVector</a></div><div class="ttdeci">void clearCommandsVector()</div><div class="ttdef"><b>Definition:</b> <a href="commands__storage_8cpp_source.html#l00075">commands_storage.cpp:75</a></div></div>
+<div class="ttc" id="classCommandsStorage_html_accc0a76edf52a7b3caf02d8e39fadaa7"><div class="ttname"><a href="classCommandsStorage.html#accc0a76edf52a7b3caf02d8e39fadaa7">CommandsStorage::bracketSize</a></div><div class="ttdeci">std::size_t bracketSize() const </div><div class="ttdef"><b>Definition:</b> <a href="commands__storage_8cpp_source.html#l00025">commands_storage.cpp:25</a></div></div>
+<div class="ttc" id="classCommandsStorage_html_ab9584a2512ce2bd53d70fa07f7eb5dd5"><div class="ttname"><a href="classCommandsStorage.html#ab9584a2512ce2bd53d70fa07f7eb5dd5">CommandsStorage::~CommandsStorage</a></div><div class="ttdeci">~CommandsStorage()</div><div class="ttdef"><b>Definition:</b> <a href="commands__storage_8cpp_source.html#l00011">commands_storage.cpp:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по bulk. Последние изменения: Вс 18 Фев 2018 15:11:56. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

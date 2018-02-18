@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>bulk: Исходный файл test_bulk.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">bulk
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">test_bulk.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="test__bulk_8cpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="test__bulk_8cpp.html#a6b2a3852db8bb19ab6909bac01859985">    1</a></span>&#160;<span class="preprocessor">#define BOOST_TEST_MODULE bulk_test</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;boost/test/unit_test.hpp&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="commands__storage_8h.html">commands_storage.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="commands__storage_8cpp.html">commands_storage.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="solvers_8h.html">solvers.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="solvers_8cpp.html">solvers.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="solver_8h.html">solver.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="solver_8cpp.html">solver.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="version_8h.html">version.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="test__bulk_8cpp.html#adc5d4450ea6481d37f043b5af0f5623d">   13</a></span>&#160;<a class="code" href="test__bulk_8cpp.html#adc5d4450ea6481d37f043b5af0f5623d">BOOST_AUTO_TEST_CASE</a>(version_test)</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    BOOST_CHECK( <a class="code" href="version_8h.html#ae64f17a84dc9c7144d1036498ff26fd9">version</a>() &gt; 0 );</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;BOOST_AUTO_TEST_SUITE(Test_CommandStorage)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="test__bulk_8cpp.html#a21d5b88d84dcc65a4aea721737c9051b">   20</a></span>&#160;<a class="code" href="test__bulk_8cpp.html#adc5d4450ea6481d37f043b5af0f5623d">BOOST_AUTO_TEST_CASE</a>(test_commandsSize)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classCommandsStorage.html">CommandsStorage</a> cmdStorage(4);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    cmdStorage.<a class="code" href="classCommandsStorage.html#a8256f1436dacdad169ab7c85c3277013">addString</a>(<span class="stringliteral">&quot;cmd1&quot;</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    cmdStorage.<a class="code" href="classCommandsStorage.html#a8256f1436dacdad169ab7c85c3277013">addString</a>(<span class="stringliteral">&quot;cmd2&quot;</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    cmdStorage.<a class="code" href="classCommandsStorage.html#a8256f1436dacdad169ab7c85c3277013">addString</a>(<span class="stringliteral">&quot;cmd3&quot;</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#a093d1da4fc7642e71ad84c7c804cd3a3">commandsSize</a>() == 3);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    cmdStorage.<a class="code" href="classCommandsStorage.html#a8256f1436dacdad169ab7c85c3277013">addString</a>(<span class="stringliteral">&quot;cmd4&quot;</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#a093d1da4fc7642e71ad84c7c804cd3a3">commandsSize</a>() == 0);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="test__bulk_8cpp.html#a2ed58c689f2127ac787c0d6591cab71d">   33</a></span>&#160;<a class="code" href="test__bulk_8cpp.html#adc5d4450ea6481d37f043b5af0f5623d">BOOST_AUTO_TEST_CASE</a>(test_addString)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classCommandsStorage.html">CommandsStorage</a> cmdStorage(4);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    cmdStorage.<a class="code" href="classCommandsStorage.html#a8256f1436dacdad169ab7c85c3277013">addString</a>(<span class="stringliteral">&quot;cmd1&quot;</span>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    cmdStorage.<a class="code" href="classCommandsStorage.html#a8256f1436dacdad169ab7c85c3277013">addString</a>(<span class="stringliteral">&quot;{&quot;</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#accc0a76edf52a7b3caf02d8e39fadaa7">bracketSize</a>() == 1);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#a093d1da4fc7642e71ad84c7c804cd3a3">commandsSize</a>() == 0);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#ac9ceaa07209e5118d4c06c9b75210673">bulkCommandString</a>() == <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    cmdStorage.<a class="code" href="classCommandsStorage.html#a8256f1436dacdad169ab7c85c3277013">addString</a>(<span class="stringliteral">&quot;cmd3&quot;</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    cmdStorage.<a class="code" href="classCommandsStorage.html#a8256f1436dacdad169ab7c85c3277013">addString</a>(<span class="stringliteral">&quot;}&quot;</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#accc0a76edf52a7b3caf02d8e39fadaa7">bracketSize</a>() == 0);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#a093d1da4fc7642e71ad84c7c804cd3a3">commandsSize</a>() == 0);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#ac9ceaa07209e5118d4c06c9b75210673">bulkCommandString</a>() == <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    cmdStorage.<a class="code" href="classCommandsStorage.html#a8256f1436dacdad169ab7c85c3277013">addString</a>(<span class="stringliteral">&quot;}&quot;</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#accc0a76edf52a7b3caf02d8e39fadaa7">bracketSize</a>() == 0);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#a093d1da4fc7642e71ad84c7c804cd3a3">commandsSize</a>() == 0);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#ac9ceaa07209e5118d4c06c9b75210673">bulkCommandString</a>() == <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    cmdStorage.<a class="code" href="classCommandsStorage.html#a8256f1436dacdad169ab7c85c3277013">addString</a>(<span class="stringliteral">&quot;{&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    cmdStorage.<a class="code" href="classCommandsStorage.html#a8256f1436dacdad169ab7c85c3277013">addString</a>(<span class="stringliteral">&quot;cmd1&quot;</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    cmdStorage.<a class="code" href="classCommandsStorage.html#a8256f1436dacdad169ab7c85c3277013">addString</a>(<span class="stringliteral">&quot;cmd2&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#accc0a76edf52a7b3caf02d8e39fadaa7">bracketSize</a>() == 1);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#a093d1da4fc7642e71ad84c7c804cd3a3">commandsSize</a>() == 2);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#ac9ceaa07209e5118d4c06c9b75210673">bulkCommandString</a>() == <span class="stringliteral">&quot;bulk: cmd1, cmd2&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    cmdStorage.<a class="code" href="classCommandsStorage.html#a8256f1436dacdad169ab7c85c3277013">addString</a>(<span class="stringliteral">&quot;{&quot;</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#accc0a76edf52a7b3caf02d8e39fadaa7">bracketSize</a>() == 2);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#a093d1da4fc7642e71ad84c7c804cd3a3">commandsSize</a>() == 2);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#ac9ceaa07209e5118d4c06c9b75210673">bulkCommandString</a>() == <span class="stringliteral">&quot;bulk: cmd1, cmd2&quot;</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    cmdStorage.<a class="code" href="classCommandsStorage.html#a8256f1436dacdad169ab7c85c3277013">addString</a>(<span class="stringliteral">&quot;cmd3&quot;</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#accc0a76edf52a7b3caf02d8e39fadaa7">bracketSize</a>() == 2);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#a093d1da4fc7642e71ad84c7c804cd3a3">commandsSize</a>() == 3);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#ac9ceaa07209e5118d4c06c9b75210673">bulkCommandString</a>() == <span class="stringliteral">&quot;bulk: cmd1, cmd2, cmd3&quot;</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    cmdStorage.<a class="code" href="classCommandsStorage.html#a8256f1436dacdad169ab7c85c3277013">addString</a>(<span class="stringliteral">&quot;}&quot;</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#accc0a76edf52a7b3caf02d8e39fadaa7">bracketSize</a>() == 1);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#a093d1da4fc7642e71ad84c7c804cd3a3">commandsSize</a>() == 3);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#ac9ceaa07209e5118d4c06c9b75210673">bulkCommandString</a>() == <span class="stringliteral">&quot;bulk: cmd1, cmd2, cmd3&quot;</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    cmdStorage.<a class="code" href="classCommandsStorage.html#a8256f1436dacdad169ab7c85c3277013">addString</a>(<span class="stringliteral">&quot;cmd4&quot;</span>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    cmdStorage.<a class="code" href="classCommandsStorage.html#a8256f1436dacdad169ab7c85c3277013">addString</a>(<span class="stringliteral">&quot;cmd5&quot;</span>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#accc0a76edf52a7b3caf02d8e39fadaa7">bracketSize</a>() == 1);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#a093d1da4fc7642e71ad84c7c804cd3a3">commandsSize</a>() == 5);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#ac9ceaa07209e5118d4c06c9b75210673">bulkCommandString</a>() == <span class="stringliteral">&quot;bulk: cmd1, cmd2, cmd3, cmd4, cmd5&quot;</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    cmdStorage.<a class="code" href="classCommandsStorage.html#a8256f1436dacdad169ab7c85c3277013">addString</a>(<span class="stringliteral">&quot;}&quot;</span>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#accc0a76edf52a7b3caf02d8e39fadaa7">bracketSize</a>() == 0);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#a093d1da4fc7642e71ad84c7c804cd3a3">commandsSize</a>() == 0);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    BOOST_CHECK(cmdStorage.<a class="code" href="classCommandsStorage.html#ac9ceaa07209e5118d4c06c9b75210673">bulkCommandString</a>() == <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;BOOST_AUTO_TEST_SUITE_END()</div>
+<div class="ttc" id="solver_8cpp_html"><div class="ttname"><a href="solver_8cpp.html">solver.cpp</a></div></div>
+<div class="ttc" id="commands__storage_8h_html"><div class="ttname"><a href="commands__storage_8h.html">commands_storage.h</a></div></div>
+<div class="ttc" id="classCommandsStorage_html"><div class="ttname"><a href="classCommandsStorage.html">CommandsStorage</a></div><div class="ttdef"><b>Definition:</b> <a href="commands__storage_8h_source.html#l00017">commands_storage.h:17</a></div></div>
+<div class="ttc" id="solvers_8h_html"><div class="ttname"><a href="solvers_8h.html">solvers.h</a></div></div>
+<div class="ttc" id="solvers_8cpp_html"><div class="ttname"><a href="solvers_8cpp.html">solvers.cpp</a></div></div>
+<div class="ttc" id="test__bulk_8cpp_html_adc5d4450ea6481d37f043b5af0f5623d"><div class="ttname"><a href="test__bulk_8cpp.html#adc5d4450ea6481d37f043b5af0f5623d">BOOST_AUTO_TEST_CASE</a></div><div class="ttdeci">BOOST_AUTO_TEST_CASE(version_test)</div><div class="ttdef"><b>Definition:</b> <a href="test__bulk_8cpp_source.html#l00013">test_bulk.cpp:13</a></div></div>
+<div class="ttc" id="classCommandsStorage_html_ac9ceaa07209e5118d4c06c9b75210673"><div class="ttname"><a href="classCommandsStorage.html#ac9ceaa07209e5118d4c06c9b75210673">CommandsStorage::bulkCommandString</a></div><div class="ttdeci">std::string bulkCommandString() const </div><div class="ttdef"><b>Definition:</b> <a href="commands__storage_8cpp_source.html#l00053">commands_storage.cpp:53</a></div></div>
+<div class="ttc" id="solver_8h_html"><div class="ttname"><a href="solver_8h.html">solver.h</a></div></div>
+<div class="ttc" id="version_8h_html"><div class="ttname"><a href="version_8h.html">version.h</a></div></div>
+<div class="ttc" id="version_8h_html_ae64f17a84dc9c7144d1036498ff26fd9"><div class="ttname"><a href="version_8h.html#ae64f17a84dc9c7144d1036498ff26fd9">version</a></div><div class="ttdeci">int version()</div><div class="ttdef"><b>Definition:</b> <a href="version_8h_source.html#l00005">version.h:5</a></div></div>
+<div class="ttc" id="classCommandsStorage_html_a093d1da4fc7642e71ad84c7c804cd3a3"><div class="ttname"><a href="classCommandsStorage.html#a093d1da4fc7642e71ad84c7c804cd3a3">CommandsStorage::commandsSize</a></div><div class="ttdeci">std::size_t commandsSize() const </div><div class="ttdef"><b>Definition:</b> <a href="commands__storage_8cpp_source.html#l00026">commands_storage.cpp:26</a></div></div>
+<div class="ttc" id="classCommandsStorage_html_a8256f1436dacdad169ab7c85c3277013"><div class="ttname"><a href="classCommandsStorage.html#a8256f1436dacdad169ab7c85c3277013">CommandsStorage::addString</a></div><div class="ttdeci">void addString(const std::string &amp;str)</div><div class="ttdef"><b>Definition:</b> <a href="commands__storage_8cpp_source.html#l00016">commands_storage.cpp:16</a></div></div>
+<div class="ttc" id="commands__storage_8cpp_html"><div class="ttname"><a href="commands__storage_8cpp.html">commands_storage.cpp</a></div></div>
+<div class="ttc" id="classCommandsStorage_html_accc0a76edf52a7b3caf02d8e39fadaa7"><div class="ttname"><a href="classCommandsStorage.html#accc0a76edf52a7b3caf02d8e39fadaa7">CommandsStorage::bracketSize</a></div><div class="ttdeci">std::size_t bracketSize() const </div><div class="ttdef"><b>Definition:</b> <a href="commands__storage_8cpp_source.html#l00025">commands_storage.cpp:25</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по bulk. Последние изменения: Вс 18 Фев 2018 15:11:56. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

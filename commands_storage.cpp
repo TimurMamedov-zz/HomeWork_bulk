@@ -53,15 +53,17 @@ void CommandsStorage::addBracket(const std::string& bracket)
 std::string CommandsStorage::bulkCommandString() const
 {
     std::stringstream ss;
-    ss << "bulk: ";
-    auto last = commandsVector.end();
-    last--;
-    for(auto it = commandsVector.begin(); it != last; it++)
+    if(!commandsVector.empty())
     {
-        ss << *it << ", ";
+        ss << "bulk: ";
+        auto last = commandsVector.end();
+        last--;
+        for(auto it = commandsVector.begin(); it != last; it++)
+        {
+            ss << *it << ", ";
+        }
+        ss << *last;
     }
-    ss << *last;
-
     return ss.str();
 }
 

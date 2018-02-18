@@ -1,9 +1,14 @@
 cmake_minimum_required(VERSION 3.2)
 
-#project(bulk VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
-project(bulk)
+if(DEFINED ENV{TRAVIS_BUILD_NUMBER})
+    project(bulk VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+else()
+    project(bulk VERSION 0.0.1)
+endif()
 
-find_package(Boost COMPONENTS unit_test_framework REQUIRED)
+set(Boost_USE_STATIC_LIBS ON)
+set(Boost_USE_STATIC_RUNTIME ON)
+find_package(Boost COMPONENTS unit_test_framework program_options REQUIRED)
 
 configure_file(version.h.in version.h)
 
@@ -15,21 +20,19 @@ add_executable(bulk ${HEADERS} ${SOURCES} main.cpp)
 set (TEST test_bulk)
 add_executable (${TEST} test_bulk.cpp)
 
-#set_target_properties (bulk PROPERTIES
-#        CXX_STANDARD 14
-#        CXX_STANDARD_REQUIRED ON
-#        COMPILE_OPTIONS -Wpedantic -Wall -Wextra
-#)
-
 set_target_properties (bulk ${TEST} PROPERTIES
         CXX_STANDARD 14
         CXX_STANDARD_REQUIRED ON
         COMPILE_OPTIONS -Wpedantic -Wall -Wextra
 )
 
-set_target_properties (${TEST} PROPERTIES
-        COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
-        INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
+set_target_properties(bulk ${TEST} PROPERTIES
+    COMPILE_DEFINITIONS BOOST_TEST_STATIC_LINK
+    INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
+)
+
+target_link_libraries(bulk
+        ${Boost_PROGRAM_OPTIONS_LIBRARY}
 )
 
 target_link_libraries(${TEST}

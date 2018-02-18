@@ -8,11 +8,11 @@
 #include "solver.h"
 #include "solver.cpp"
 
-//#include "version.h"
+#include "version.h"
 
 BOOST_AUTO_TEST_CASE(version_test)
 {
-//    BOOST_CHECK( version() > 0 );
+    BOOST_CHECK( version() > 0 );
 }
 
 BOOST_AUTO_TEST_SUITE(Test_CommandStorage)
@@ -30,43 +30,59 @@ BOOST_AUTO_TEST_CASE(test_commandsSize)
     BOOST_CHECK(cmdStorage.commandsSize() == 0);
 }
 
-BOOST_AUTO_TEST_CASE(test_bracketSize)
+BOOST_AUTO_TEST_CASE(test_addString)
 {
     CommandsStorage cmdStorage(4);
+
     cmdStorage.addString("cmd1");
     cmdStorage.addString("{");
     BOOST_CHECK(cmdStorage.bracketSize() == 1);
     BOOST_CHECK(cmdStorage.commandsSize() == 0);
+    BOOST_CHECK(cmdStorage.bulkCommandString() == "");
+
     cmdStorage.addString("cmd3");
     cmdStorage.addString("}");
     BOOST_CHECK(cmdStorage.bracketSize() == 0);
     BOOST_CHECK(cmdStorage.commandsSize() == 0);
+    BOOST_CHECK(cmdStorage.bulkCommandString() == "");
 
     cmdStorage.addString("}");
     BOOST_CHECK(cmdStorage.bracketSize() == 0);
     BOOST_CHECK(cmdStorage.commandsSize() == 0);
+    BOOST_CHECK(cmdStorage.bulkCommandString() == "");
 
     cmdStorage.addString("{");
     cmdStorage.addString("cmd1");
     cmdStorage.addString("cmd2");
     BOOST_CHECK(cmdStorage.bracketSize() == 1);
     BOOST_CHECK(cmdStorage.commandsSize() == 2);
+    BOOST_CHECK(cmdStorage.bulkCommandString() == "bulk: cmd1, cmd2");
+
     cmdStorage.addString("{");
     BOOST_CHECK(cmdStorage.bracketSize() == 2);
     BOOST_CHECK(cmdStorage.commandsSize() == 2);
+    BOOST_CHECK(cmdStorage.bulkCommandString() == "bulk: cmd1, cmd2");
+
     cmdStorage.addString("cmd3");
     BOOST_CHECK(cmdStorage.bracketSize() == 2);
     BOOST_CHECK(cmdStorage.commandsSize() == 3);
+    BOOST_CHECK(cmdStorage.bulkCommandString() == "bulk: cmd1, cmd2, cmd3");
+
     cmdStorage.addString("}");
     BOOST_CHECK(cmdStorage.bracketSize() == 1);
     BOOST_CHECK(cmdStorage.commandsSize() == 3);
+    BOOST_CHECK(cmdStorage.bulkCommandString() == "bulk: cmd1, cmd2, cmd3");
+
     cmdStorage.addString("cmd4");
     cmdStorage.addString("cmd5");
     BOOST_CHECK(cmdStorage.bracketSize() == 1);
     BOOST_CHECK(cmdStorage.commandsSize() == 5);
+    BOOST_CHECK(cmdStorage.bulkCommandString() == "bulk: cmd1, cmd2, cmd3, cmd4, cmd5");
+
     cmdStorage.addString("}");
     BOOST_CHECK(cmdStorage.bracketSize() == 0);
     BOOST_CHECK(cmdStorage.commandsSize() == 0);
+    BOOST_CHECK(cmdStorage.bulkCommandString() == "");
 }
 
 BOOST_AUTO_TEST_SUITE_END()
